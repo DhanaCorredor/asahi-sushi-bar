@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# material de marca original (pesado; no necesario para el build)
+/assets-marca
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

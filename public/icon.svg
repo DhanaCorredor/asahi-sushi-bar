@@ -1,0 +1,14 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="14" fill="#1A1A1A"/>
+  <circle cx="30" cy="30" r="17" fill="#E64A41"/>
+  <!-- Samurái con sombrero (silueta simplificada) -->
+  <g fill="#1A1A1A">
+    <path d="M17.5 27.5 L30 21 L42.5 27.5 L37.5 28.6 L37.5 29.7 L22.5 29.7 L22.5 28.6 Z"/>
+    <path d="M27 30.8 h6 l1.8 12.5 c0.2 1.4 -0.8 2.2 -2 2.2 h-1.2 v-9 h-2.2 v9 h-1.2 c-1.2 0 -2.2 -0.8 -2 -2.2 Z"/>
+  </g>
+  <!-- Palillos -->
+  <g stroke="#FDB813" stroke-width="2.4" stroke-linecap="round">
+    <line x1="40" y1="50" x2="55" y2="45.5"/>
+    <line x1="40" y1="54" x2="55" y2="49.5"/>
+  </g>
+</svg>

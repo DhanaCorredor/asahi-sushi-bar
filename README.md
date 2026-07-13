@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Asahi Sushi Bar — Web
 
-## Getting Started
+Sitio web del restaurante **Asahi Sushi Bar** (Leganés, Madrid).
+_"El sol nace en cada bocado."_
 
-First, run the development server:
+Sushi vibrante y urbano. Identidad basada en el manual de marca oficial
+("Breaking the Rules"): paleta rojo / amarillo / negro y estética wabi-sabi.
+
+## Stack
+
+- **Next.js 16** (App Router) + **React 19**
+- **Tailwind CSS v4** (configuración por CSS en `src/app/globals.css`)
+- **TypeScript**
+- Gestor de paquetes: **pnpm**
+- Fuentes: Montserrat + Noto Sans JP (vía `next/font`, self-hosted)
+
+## Desarrollo
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
+pnpm dev        # http://localhost:3000
+pnpm build      # build de producción
+pnpm start      # servir el build
+pnpm lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Estructura
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+src/
+  app/
+    layout.tsx        Layout raíz: fuentes, metadata, Navbar + Footer
+    page.tsx          Portada (hero, destacados, nosotros, carta, contacto)
+    carta/page.tsx    Carta completa
+    globals.css       Sistema de diseño (paleta, tipografía, utilidades)
+  components/          Navbar, Footer, Hero, SectionHeading, DishRow, CartaNav, icons
+  data/
+    menu.ts           Carta completa (fuente única de verdad)
+    site.ts           Datos del negocio: contacto, horarios, redes
+public/
+  brand/              Logotipos (versiones claras/oscuras)
+  icon.svg            Favicon
+assets-marca/         Material original (manual de marca, menú PDF, logos)
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Cómo editar el contenido
 
-## Learn More
+- **Platos y precios** → `src/data/menu.ts`
+- **Dirección, teléfono, horarios, redes** → `src/data/site.ts`
+- **Destacados de la portada** → `signatureDishes` en `src/data/menu.ts`
+- **Colores / tipografías** → `@theme` en `src/app/globals.css`
 
-To learn more about Next.js, take a look at the following resources:
+## Identidad de marca
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Color          | Hex       | Uso                         |
+| -------------- | --------- | --------------------------- |
+| Rojo Amanecer  | `#E64A41` | Acento principal, CTA       |
+| Amarillo Sol   | `#FDB813` | Acento secundario, precios  |
+| Negro Sumi-e   | `#1A1A1A` | Fondo, contraste dramático  |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Tipografía: Montserrat (Montserrat / Open Sans según el manual).
 
-## Deploy on Vercel
+## Pendiente / mejoras futuras
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Sustituir el panel de marca de "Nosotros" por fotografía de plato real
+  (estilo wabi-sabi: iluminación lateral, plano cenital, espacio negativo).
+- Añadir fotos de platos a los destacados cuando estén disponibles.
+- Considerar sistema de reservas online (actualmente vía WhatsApp).

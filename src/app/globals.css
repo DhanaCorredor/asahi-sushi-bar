@@ -1,26 +1,141 @@
 @import "tailwindcss";
 
+/*
+  ASAHI SUSHI BAR — Sistema de diseño
+  Basado en el Manual de Marca oficial ("Breaking the Rules").
+
+  Paleta:
+  - Rojo Amanecer   #E64A41   energía vibrante y pasión por el sabor
+  - Amarillo Sol    #FDB813   luminosidad y optimismo urbano
+  - Negro Sumi-e    #1A1A1A   contraste dramático y sofisticación
+
+  Estética: wabi-sabi urbano — oscuro, dramático, con espacio negativo.
+  Voz: Directa · Enérgica · Premium.
+*/
+
+@theme {
+  /* Marca */
+  --color-sunrise: #e64a41;
+  --color-sunrise-600: #cf3d35;
+  --color-sunrise-700: #b13129;
+
+  --color-sun: #fdb813;
+  --color-sun-600: #e2a205;
+
+  --color-sumi: #1a1a1a;
+  --color-sumi-800: #232323;
+  --color-sumi-700: #2c2c2c;
+  --color-sumi-600: #3a3a3a;
+
+  /* Neutros de apoyo */
+  --color-paper: #f5f2ea; /* crema tenue para secciones claras y texto sobre negro */
+  --color-paper-dim: #d8d3c7;
+  --color-ash: #8a8a86; /* texto secundario sobre oscuro */
+
+  /* Tipografía */
+  --font-display: var(--font-montserrat), "Arial Black", system-ui, sans-serif;
+  --font-sans: var(--font-montserrat), system-ui, sans-serif;
+  --font-jp: var(--font-noto-jp), var(--font-montserrat), sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: var(--color-sumi);
+  --foreground: var(--color-paper);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--color-sunrise);
+    color: var(--color-paper);
+  }
+
+  /* Reduce el brillo de foco sin perder accesibilidad */
+  :focus-visible {
+    outline: 2px solid var(--color-sun);
+    outline-offset: 2px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Titular tipo cartel: Montserrat pesado en versales, "Directa/Enérgica" */
+  .display {
+    font-family: var(--font-display);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 0.95;
+  }
+
+  /* Etiqueta pequeña en versalitas espaciadas */
+  .eyebrow {
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    font-weight: 700;
+    font-size: 0.72rem;
+  }
+
+  /* Línea de puntos entre plato y precio (carta) */
+  .leader {
+    flex: 1 1 auto;
+    margin: 0 0.75rem;
+    border-bottom: 1px dotted color-mix(in srgb, currentColor 35%, transparent);
+    transform: translateY(-0.3rem);
+  }
+
+  /* Disco de sol naciente */
+  .sun-disc {
+    background: radial-gradient(
+      circle at 50% 55%,
+      var(--color-sun) 0%,
+      var(--color-sun) 60%,
+      var(--color-sun-600) 100%
+    );
+    border-radius: 9999px;
+  }
+  .sunrise-disc {
+    background: radial-gradient(
+      circle at 50% 55%,
+      var(--color-sunrise) 0%,
+      var(--color-sunrise) 62%,
+      var(--color-sunrise-700) 100%
+    );
+    border-radius: 9999px;
+  }
+
+  /* Rayos del sol (seigaiha/rising-sun sutil) para fondos */
+  .rays {
+    background: repeating-conic-gradient(
+      from 0deg at 50% 100%,
+      color-mix(in srgb, var(--color-sunrise) 14%, transparent) 0deg 6deg,
+      transparent 6deg 12deg
+    );
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .vertical-jp {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    letter-spacing: 0.1em;
+  }
 }
