@@ -4,11 +4,19 @@ export const site = {
   name: "Asahi Sushi Bar",
   tagline: "El sol nace en cada bocado.",
   kanji: "朝日",
+  // URL de producción (canonical). Actualízala si conectas un dominio propio.
+  url: "https://asahi-sushi-bar.vercel.app",
+  priceRange: "€€",
+  cuisine: ["Sushi", "Japonesa", "Asiática"],
   concept:
     "Sushi vibrante y urbano que rompe moldes. Fusionamos la tradición japonesa con audacia contemporánea para crear experiencias memorables.",
   city: "Leganés · Madrid",
   address: {
     street: "C/ Ntra. Sra. de la Macarena, 13",
+    locality: "Leganés",
+    region: "Madrid",
+    postalCode: "28914",
+    country: "ES",
     city: "Leganés, Madrid",
     maps: "https://www.google.com/maps/search/?api=1&query=C%2F+Ntra.+Sra.+de+la+Macarena+13+Legan%C3%A9s+Madrid",
     embed:
@@ -36,6 +44,15 @@ export const site = {
     { title: "Directa", desc: "Claridad visual sin concesiones." },
     { title: "Enérgica", desc: "Contrastes vibrantes y dinámicos." },
     { title: "Premium", desc: "Calidad excepcional en cada detalle." },
+  ],
+  // Horario legible por máquina para datos estructurados (schema.org)
+  openingHours: [
+    {
+      days: ["Tuesday", "Wednesday", "Thursday", "Sunday"],
+      opens: "11:00",
+      closes: "23:00",
+    },
+    { days: ["Friday", "Saturday"], opens: "11:00", closes: "23:59" },
   ],
 } as const;
 

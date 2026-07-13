@@ -10,6 +10,17 @@ export const metadata: Metadata = {
   title: "Carta",
   description:
     "Carta completa de Asahi Sushi Bar: nigiris, makis, sashimi, tartares, temaki, combos, cervezas japonesas, vinos y coctelería. Leganés, Madrid.",
+  alternates: {
+    canonical: "/carta",
+  },
+  openGraph: {
+    title: "Carta · Asahi Sushi Bar",
+    description:
+      "Nigiris, makis, sashimi, tartares, temaki, combos y coctelería. Elaboración al momento en Leganés.",
+    url: "/carta",
+    type: "website",
+    images: ["/og.png"],
+  },
 };
 
 export default function CartaPage() {
