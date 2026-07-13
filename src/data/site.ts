@@ -15,7 +15,7 @@ export const site = {
     street: "C/ Ntra. Sra. de la Macarena, 13",
     locality: "Leganés",
     region: "Madrid",
-    postalCode: "28914",
+    postalCode: "28911",
     country: "ES",
     city: "Leganés, Madrid",
     maps: "https://www.google.com/maps/search/?api=1&query=C%2F+Ntra.+Sra.+de+la+Macarena+13+Legan%C3%A9s+Madrid",
