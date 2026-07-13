@@ -3,8 +3,8 @@ import Link from "next/link";
 import CartaNav from "@/components/CartaNav";
 import DishRow from "@/components/DishRow";
 import { menu, foodCategories, drinkCategories } from "@/data/menu";
-import { whatsappUrl } from "@/data/site";
-import { WhatsAppIcon } from "@/components/icons";
+import { site, whatsappUrl } from "@/data/site";
+import { BagIcon, WhatsAppIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Carta",
@@ -126,9 +126,18 @@ export default function CartaPage() {
         <div className="mt-14 flex flex-col items-center gap-5 rounded-2xl border border-white/10 bg-gradient-to-br from-sumi-800 to-sumi p-10 text-center">
           <h2 className="display text-2xl text-paper sm:text-3xl">¿Listo para pedir?</h2>
           <p className="max-w-md text-sm text-paper/65">
-            Reserva tu mesa o haz tu pedido directamente por WhatsApp.
+            Pídelo a domicilio en Uber Eats o reserva tu mesa por WhatsApp.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
+            <a
+              href={site.ubereats}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-uber px-7 py-3.5 text-sm font-semibold text-black transition-colors hover:bg-uber-600"
+            >
+              <BagIcon className="h-4 w-4" />
+              Pedir en Uber Eats
+            </a>
             <a
               href={whatsappUrl()}
               target="_blank"
@@ -136,13 +145,13 @@ export default function CartaPage() {
               className="inline-flex items-center gap-2 rounded-full bg-sunrise px-7 py-3.5 text-sm font-semibold text-paper transition-colors hover:bg-sunrise-600"
             >
               <WhatsAppIcon className="h-4 w-4" />
-              Reservar por WhatsApp
+              Reservar
             </a>
             <Link
               href="/#contacto"
               className="inline-flex items-center gap-2 rounded-full border border-white/20 px-7 py-3.5 text-sm font-semibold text-paper transition-colors hover:border-sun hover:text-sun"
             >
-              Ver ubicación y horario
+              Ubicación y horario
             </Link>
           </div>
         </div>

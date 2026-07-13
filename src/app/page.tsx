@@ -6,6 +6,7 @@ import { site, whatsappUrl } from "@/data/site";
 import { menu, signatureDishes } from "@/data/menu";
 import {
   ArrowIcon,
+  BagIcon,
   ClockIcon,
   InstagramIcon,
   PhoneIcon,
@@ -219,13 +220,22 @@ export default function Home() {
 
             <div className="mt-8 flex flex-wrap gap-4">
               <a
+                href={site.ubereats}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-uber px-6 py-3 text-sm font-semibold text-black transition-colors hover:bg-uber-600"
+              >
+                <BagIcon className="h-4 w-4" />
+                Pedir en Uber Eats
+              </a>
+              <a
                 href={whatsappUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-sunrise px-6 py-3 text-sm font-semibold text-paper transition-colors hover:bg-sunrise-600"
               >
                 <WhatsAppIcon className="h-4 w-4" />
-                Reservar por WhatsApp
+                Reservar
               </a>
               <a
                 href={site.instagram.url}

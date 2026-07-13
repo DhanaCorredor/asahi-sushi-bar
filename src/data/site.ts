@@ -31,6 +31,7 @@ export const site = {
     handle: "@AsahiSushiOficial",
     url: "https://www.instagram.com/asahisushioficial/",
   },
+  ubereats: "https://www.ubereats.com/es/store/asahi-sushi-bar/d1esLhwcSZOPPFDsDZODBw",
   hours: [
     { day: "Lunes", value: "Cerrado", closed: true },
     { day: "Martes", value: "11:00 – 23:00", closed: false },

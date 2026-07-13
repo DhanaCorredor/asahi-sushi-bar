@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { whatsappUrl } from "@/data/site";
+import { site, whatsappUrl } from "@/data/site";
 import logo from "../../public/brand/logo-horizontal-light.png";
 
 const links = [
@@ -63,6 +63,16 @@ export default function Navbar() {
           ))}
           <li>
             <a
+              href={site.ubereats}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium tracking-wide text-paper/85 transition-colors hover:text-uber"
+            >
+              Pedir online
+            </a>
+          </li>
+          <li>
+            <a
               href={whatsappUrl()}
               target="_blank"
               rel="noopener noreferrer"
@@ -120,6 +130,17 @@ export default function Navbar() {
             </li>
           ))}
           <li className="pt-3">
+            <a
+              href={site.ubereats}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+              className="block rounded-full bg-uber px-5 py-3 text-center font-semibold text-black"
+            >
+              Pedir en Uber Eats
+            </a>
+          </li>
+          <li className="pt-2">
             <a
               href={whatsappUrl()}
               target="_blank"

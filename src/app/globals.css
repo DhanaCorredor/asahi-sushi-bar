@@ -32,6 +32,10 @@
   --color-paper-dim: #d8d3c7;
   --color-ash: #8a8a86; /* texto secundario sobre oscuro */
 
+  /* Uber Eats (para el botón de pedidos) */
+  --color-uber: #06c167;
+  --color-uber-600: #05a557;
+
   /* Tipografía */
   --font-display: var(--font-montserrat), "Arial Black", system-ui, sans-serif;
   --font-sans: var(--font-montserrat), system-ui, sans-serif;

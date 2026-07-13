@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { site, whatsappUrl } from "@/data/site";
-import { InstagramIcon, WhatsAppIcon } from "@/components/icons";
+import { BagIcon, InstagramIcon, WhatsAppIcon } from "@/components/icons";
 import logo from "../../public/brand/logo-horizontal-light.png";
 
 export default function Footer() {
@@ -31,6 +31,15 @@ export default function Footer() {
               className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-paper/80 transition-colors hover:border-sun hover:text-sun"
             >
               <WhatsAppIcon className="h-5 w-5" />
+            </a>
+            <a
+              href={site.ubereats}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Pedir en Uber Eats"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-paper/80 transition-colors hover:border-uber hover:text-uber"
+            >
+              <BagIcon className="h-5 w-5" />
             </a>
           </div>
         </div>

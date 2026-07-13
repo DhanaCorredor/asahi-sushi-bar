@@ -29,7 +29,7 @@ export default function StructuredData() {
       addressCountry: site.address.country,
     },
     hasMap: site.address.maps,
-    sameAs: [site.instagram.url],
+    sameAs: [site.instagram.url, site.ubereats],
     openingHoursSpecification: site.openingHours.map((h) => ({
       "@type": "OpeningHoursSpecification",
       dayOfWeek: [...h.days],
@@ -37,7 +37,21 @@ export default function StructuredData() {
       closes: h.closes,
     })),
     menu: `${site.url}/carta`,
+    hasMenu: `${site.url}/carta`,
     areaServed: "Leganés, Madrid",
+    potentialAction: {
+      "@type": "OrderAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: site.ubereats,
+        inLanguage: "es-ES",
+        actionPlatform: [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform",
+        ],
+      },
+      deliveryMethod: "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet",
+    },
   };
 
   return (
